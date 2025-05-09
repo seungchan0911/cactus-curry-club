@@ -2,70 +2,153 @@
 	font-family: 'Pretendard';
 	font-weight: 900;
 	font-display: swap;
-	src: local('Pretendard Black'), url(../static/woff2/Pretendard-Black.woff2) format('woff2'), url(./woff/Pretendard-Black.woff) format('woff');
+	src: local('Pretendard Black'), url(../fonts/static/woff2/Pretendard-Black.woff2) format('woff2'), url(./woff/Pretendard-Black.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 800;
 	font-display: swap;
-	src: local('Pretendard ExtraBold'), url(../static/woff2/Pretendard-ExtraBold.woff2) format('woff2'), url(./woff/Pretendard-ExtraBold.woff) format('woff');
+	src: local('Pretendard ExtraBold'), url(../fonts/static/woff2/Pretendard-ExtraBold.woff2) format('woff2'), url(./woff/Pretendard-ExtraBold.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 700;
 	font-display: swap;
-	src: local('Pretendard Bold'), url(../static/woff2/Pretendard-Bold.woff2) format('woff2'), url(./woff/Pretendard-Bold.woff) format('woff');
+	src: local('Pretendard Bold'), url(../fonts/static/woff2/Pretendard-Bold.woff2) format('woff2'), url(./woff/Pretendard-Bold.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 600;
 	font-display: swap;
-	src: local('Pretendard SemiBold'), url(../static/woff2/Pretendard-SemiBold.woff2) format('woff2'), url(./woff/Pretendard-SemiBold.woff) format('woff');
+	src: local('Pretendard SemiBold'), url(../fonts/static/woff2/Pretendard-SemiBold.woff2) format('woff2'), url(./woff/Pretendard-SemiBold.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 500;
 	font-display: swap;
-	src: local('Pretendard Medium'), url(../static/woff2/Pretendard-Medium.woff2) format('woff2'), url(./woff/Pretendard-Medium.woff) format('woff');
+	src: local('Pretendard Medium'), url(../fonts/static/woff2/Pretendard-Medium.woff2) format('woff2'), url(./woff/Pretendard-Medium.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 400;
 	font-display: swap;
-	src: local('Pretendard Regular'), url(../static/woff2/Pretendard-Regular.woff2) format('woff2'), url(./woff/Pretendard-Regular.woff) format('woff');
+	src: local('Pretendard Regular'), url(../fonts/static/woff2/Pretendard-Regular.woff2) format('woff2'), url(./woff/Pretendard-Regular.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 300;
 	font-display: swap;
-	src: local('Pretendard Light'), url(../static/woff2/Pretendard-Light.woff2) format('woff2'), url(./woff/Pretendard-Light.woff) format('woff');
+	src: local('Pretendard Light'), url(../fonts/static/woff2/Pretendard-Light.woff2) format('woff2'), url(./woff/Pretendard-Light.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 200;
 	font-display: swap;
-	src: local('Pretendard ExtraLight'), url(../static/woff2/Pretendard-ExtraLight.woff2) format('woff2'), url(./woff/Pretendard-ExtraLight.woff) format('woff');
+	src: local('Pretendard ExtraLight'), url(../fonts/static/woff2/Pretendard-ExtraLight.woff2) format('woff2'), url(./woff/Pretendard-ExtraLight.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 100;
 	font-display: swap;
-	src: local('Pretendard Thin'), url(../static/woff2/Pretendard-Thin.woff2) format('woff2'), url(./woff/Pretendard-Thin.woff) format('woff');
+	src: local('Pretendard Thin'), url(../fonts/static/woff2/Pretendard-Thin.woff2) format('woff2'), url(./woff/Pretendard-Thin.woff) format('woff');
 }
+
+@font-face {
+    font-family: 'BobbiTheHippie';
+    src: url('../fonts/BobbiTheHippie/BobbiTheHippie.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 * {margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box; color: inherit; font-family: 'Pretendard'; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth;}
 
 .container {
     display: flex;
     flex-direction: column;
+}
+
+/* loading-animation */
+
+.loading-animation {
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #23AC39;
+    z-index: 200;
+    animation-name: loading-screen;
+    animation-duration: 5.5s;
+    animation-fill-mode: forwards;
+}
+
+.loading-logo img {
+    width: 200px;
+    height: 200px;
+}
+
+.loading-animation .fill-box {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+
+    width: 200px;
+    height: 200px;
+    
+    background-color: #23AC39;
+    transition: 5s cubic-bezier(0.72, 0.14, 0.26, 0.76);
+    animation-name: loading-animation;
+    animation-duration: 5s;
+    opacity: 0.5;
+}
+
+#counter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    
+    transform: translate(-50%, 125px);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 900;
+}
+
+@keyframes loading-animation {
+    from {
+        transform: translateY(100%);
+    }
+    
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes loading-screen {
+    from {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 /* mobile menu! */
@@ -116,13 +199,14 @@
     
     font-size: 22px;
     letter-spacing: 1.25px;
-    font-weight: 900;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.75);
 }   
 
 .mobile-menu-nav a {
     width: fit-content;
+
+    font-family: 'BobbiTheHippie';
 }
 
 #mobile-menu:checked ~ .mobile-menu {
@@ -185,7 +269,6 @@ header {
     gap: 25px;
 
     letter-spacing: 1.25px;
-    font-weight: 900;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.75);
 }
@@ -195,7 +278,11 @@ header {
 }
 
 .header__nav li:hover {
-    color: #23AC39;
+    color: #C96C18;
+}
+
+.header__nav a {
+    font-family: 'BobbiTheHippie';
 }
 
 .language-control {
@@ -209,7 +296,7 @@ header {
     padding: 7.5px 16.5px;
     
     border-radius: 18px;
-    background: #23AC39;
+    background: #C96C18;
     color: #fff;
     font-size: 14px;
     cursor: pointer;
@@ -304,7 +391,7 @@ main {
 
 .section-title {
     font-size: 48px;
-
+    font-family: 'BobbiTheHippie';
 }
 
 .introduce-section {
@@ -319,11 +406,11 @@ main {
     justify-content: space-between;
 
     width: 100%;
-    height: 640px;
-
+    
+    aspect-ratio: 16 / 10;
     background-image: url(../img/source/freeview.jpeg);
-    background-size: cover;
-    background-position: center;
+    background-size: 115%;
+    background-position: 50% 25%;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -390,26 +477,25 @@ main {
     gap: 12.5px;
 
     width: 100%;
-    height: 375px;
 }
 
 .double-freeview img {
-    width: 50%;
-    height: 100%;
-
+    width: calc(50% - 6.25px);
+    
+    aspect-ratio: 4 / 3;
     border-radius: 5px;
     object-fit: cover;
 }
 
 .single-freeview {
     width: 100%;
-    height: 550px;
 }
 
 .single-freeview img {
     width: 100%;
     height: 100%;
-
+    
+    aspect-ratio: 4 / 3;
     border-radius: 5px;
     object-fit: cover;
 }
@@ -515,7 +601,7 @@ footer {
 
     padding: 50px 250px;
 
-    background-color: #23AC39;
+    background-color: #C96C18;
 }
 
 .footer-top {
@@ -602,7 +688,7 @@ footer {
         text-align: center;
     }
 
-    .introduce-section {
+    .introduce-section, .news-section, .menu-section, .gallery-section {
         gap: 12.5px;
     }
 
