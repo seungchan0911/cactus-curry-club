@@ -3,49 +3,41 @@ const menuDatas = [
         "img": "../img/curry/IMG_1711.jpeg",
         "title": "beef curry",
         "subTitle": "mixed spices, beef, butter, heavy cream",
-        "price": "10,000￦"
     },
     {
         "img": "../img/curry/IMG_1709.jpeg",
         "title": "keema curry",
         "subTitle": "mixed spices, beef, butter, heavy cream",
-        "price": "10,000￦"
     },
     {
         "img": "../img/curry/IMG_1710.jpeg",
         "title": "shrimp curry",
         "subTitle": "mixed spices, beef, butter, heavy cream",
-        "price": "10,000￦"
     },
     {
-        "img": "../img/curry/IMG_1711.jpeg",
+        "img": "../img/curry/0_DSF0486.jpg",
         "title": "spicy chicken curry",
         "subTitle": "mixed spices, beef, butter, heavy cream",
-        "price": "10,000￦"
     },
     {
         "img": "../img/curry/IMG_2491.jpeg",
         "title": "keema curry maze udon",
         "subTitle": "mixed spices, beef, butter, heavy cream",
-        "price": "12,000￦"
     },
     {
         "img": "../img/curry/IMG_3012.jpeg",
         "title": "karaage",
         "subTitle": "mixed spices, beef, butter, heavy cream",
-        "price": "5,000￦"
     },
     {
         "img": "../img/curry/IMG_2993.jpeg",
         "title": "pork katsu",
         "subTitle": "mixed spices, beef, butter, heavy cream",
-        "price": "6,000￦"
     },
     {
         "img": "../img/curry/IMG_2994.jpeg",
         "title": "fried shrimp",
         "subTitle": "mixed spices, beef, butter, heavy cream",
-        "price": "5,000￦"
     },
 ]
 
@@ -64,7 +56,6 @@ function loadingMenuData() {
                     <div class="menu-title">${menuData.title}</div>
                     <div class="menu-sub-title">${menuData.subTitle}</div>
                 </div>
-                <div class="menu-price">${menuData.price}</div>
             </div>
         `
 
@@ -89,3 +80,25 @@ window.addEventListener("load", () => {
     headerMargin()
     window.addEventListener("resize", headerMargin)
 })
+
+function loadingAnimation() {
+    const counter = document.getElementById("counter")
+    const body = document.querySelector("body")
+    body.style.overflow = "hidden"
+    let value = 0
+    const duration = 5000
+    const steps = 100
+    const intervalTime = duration / steps
+    
+    const interval = setInterval(() => {
+        value++
+        counter.textContent = value + "%"
+        
+        if (value >= 100) {
+            clearInterval(interval)
+            body.style.overflow = "scroll"
+        }
+    }, intervalTime)
+}
+
+loadingAnimation()
