@@ -728,6 +728,10 @@ footer {
         height: 150px;
     }
 
+    .double-freeview img {
+        width: calc(50% - 3.125px);
+    }
+
     .menu-scroll-frame {
         width: 100%;
         
