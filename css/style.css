@@ -510,6 +510,8 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 25px 12.5px;
+
+    height: fit-content;
 }
 
 .menu {
@@ -517,9 +519,9 @@ main {
     flex-direction: column;
     gap: 12.5px;
 
-    height: fit-content;
-    padding-bottom: 12.5px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    height: 100%;
+    /* padding-bottom: 12.5px; */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.125); */
 }
 
 .menu-img {
